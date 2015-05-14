@@ -1,0 +1,200 @@
+﻿@{
+	Layout = null;
+}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<h3>Filtreerimine</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-5">
+			<tags-input ng-model="allowedTags" placeholder="Kohustuslikud sildid" class="bootstrap"></tags-input>
+		</div>
+		<div class="col-md-5">
+			<tags-input ng-model="deniedTags" placeholder="Keelatud sildid" class="bootstrap"></tags-input>
+		</div>
+		<div class="col-md-2">
+			<button kendo-button class="k-primary" ng-click="refreshExercises()" style="margin-top:7px;">Filtreeri</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<h3>Üleslaaditud materjalid</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div ui-grid="gridOptions" class="myGrid" ui-grid-selection style="width:99%"></div>
+		</div>
+	</div>
+</div>
+
+<div kendo-window="viewWindow" k-title="'Ülesanne'" k-options="windowOptions" k-visible="false">
+	<div class="container-fluid">
+		<div class="row" ng-show="isAuthenticated">
+			<div class="col-md-12 text-right">
+				<input type="checkbox" id="editCheckbox" class="k-checkbox" ng-model="editing">
+				<label class="k-checkbox-label" for="editCheckbox">Redigeeri</label>
+				<button kendo-button class="k-primary" ng-click="downloadPDF(dataItem)" ng-hide="editing">Laadi alla PDF</button>
+				<button kendo-button class="k-primary" ng-click="share(dataItem)" ng-hide="editing">Jaga</button>
+			</div>
+		</div>
+		<div ng-hide="editing" id="pdfDownload">
+			<div ng-if="display.Title">
+				<div class="row">
+					<div class="col-md-6">
+						<h3>Ülesande pealkiri</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<p ng-bind-html="dataItem.Title"></p>
+					</div>
+				</div>
+			</div>
+			<div ng-if="display.Question">
+				<div class="row">
+					<div class="col-md-12">
+						<h3>Ülesande püstitus</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<p ng-bind-html="dataItem.Question"></p>
+					</div>
+				</div>
+			</div>
+			<div ng-if="display.Tip">
+				<div class="row">
+					<div class="col-md-12">
+						<h3>Vihje</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<p ng-bind-html="dataItem.Tip"></p>
+					</div>
+				</div>
+			</div>
+			<div ng-if="display.Answer">
+				<div class="row">
+					<div class="col-md-12">
+						<h3>Lahendus</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<p ng-bind-html="dataItem.Answer"></p>
+					</div>
+				</div>
+			</div>
+			<div ng-if="display.Tags">
+				<div class="row">
+					<div class="col-md-12">
+						<h3>Sildid</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<span ng-repeat="tag in dataItem.Tags track by $index">
+							{{tag.Text}}
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div ng-show="editing">
+			<div class="row">
+				<div class="col-md-12">
+					<span class="tiitel">Ülesande pealkiri</span>
+					<input type="checkbox" id="titleCheckbox" class="k-checkbox" ng-model="display.Title">
+					<label class="k-checkbox-label" for="titleCheckbox">Kuva</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<input type="text" class="k-textbox" ng-model="dataItem.Title">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<span class="tiitel">Ülesande püstitus</span>
+					<input type="checkbox" id="questionCheckbox" class="k-checkbox" ng-model="display.Question">
+					<label class="k-checkbox-label" for="questionCheckbox">Kuva</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div text-angular ng-model="dataItem.Question"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<span class="tiitel">Vihje</span>
+					<input type="checkbox" id="tipCheckbox" class="k-checkbox" ng-model="display.Tip">
+					<label class="k-checkbox-label" for="tipCheckbox">Kuva</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div text-angular ng-model="dataItem.Tip"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<span class="tiitel">Lahendus</span>
+					<input type="checkbox" id="answerCheckbox" class="k-checkbox" ng-model="display.Answer">
+					<label class="k-checkbox-label" for="answerCheckbox">Kuva</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div text-angular ng-model="dataItem.Answer"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<span class="tiitel">Sildid</span>
+					<input type="checkbox" id="tagsCheckbox" class="k-checkbox" ng-model="display.Tags">
+					<label class="k-checkbox-label" for="tagsCheckbox">Kuva</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<tags-input ng-model="dataItem.Tags" placeholder="Lisa silt ja vajuta ENTER" class="bootstrap" display-property="Text"></tags-input>
+				</div>
+			</div>
+		</div>
+		<div ng-show="editing && dataItem.UserAllowedToEditItem">
+			<div ng-show="user.Teacher">
+				<div class="row">
+					<div class="col-md-12">
+						<h3>Privaatsus</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<input type="radio" ng-model="dataItem.Privacy" value="1">Avalik
+						<input type="radio" ng-model="dataItem.Privacy" value="2">Avalik ainult õpetajatele
+					</div>
+				</div>
+			</div>
+			<div class="row" style="margin-top:10px;">
+				<div class="col-md-12">
+					<button kendo-button class="k-primary" ng-click="update(dataItem)">Muuda</button>
+					<button kendo-button class="k-primary" ng-click="delete(dataItem)">Kustuta</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div kendo-window="shareWindow" k-title="'Jagatud'" k-height="50" k-width="800" k-visible="false">
+	<div class="container-fluid">
+		<div class="row">
+			Ülesanne on jagatud lehele <a href="{{shareLink}}" target="_blank">{{shareLink}}</a>
+		</div>
+	</div>
+</div>

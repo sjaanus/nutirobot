@@ -1,0 +1,33 @@
+﻿<header class="row" style="height:80px;cursor:pointer;" ng-controller="HeaderController" ng-click="goHome()">
+	<div class="col-md-offset-10 col-md-2 text-right">
+		<div ng-show="isAuthenticated()">
+			Tere, {{storage.user.Name}}!
+			<button kendo-button class="k-primary" ng-click="logout()">Logi välja</button>
+		</div>
+		<div ng-hide="isAuthenticated()">
+			<a class="btn btn-block btn-social btn-sm btn-facebook" ng-click="authenticate('facebook')">
+				<i class="fa fa-facebook"></i>Logi sisse Facebookiga
+			</a>
+			<a class="btn btn-block btn-social btn-sm btn-google-plus" ng-click="authenticate('google')">
+				<i class="fa fa-google"></i>Logi sisse Googlega
+			</a>
+		</div>
+	</div>
+</header>
+<main class="row" style="height:calc(100% - 80px);">
+	<section kendo-splitter k-panes="[ { size: '240px'}, null]" style="height:100%;box-sizing:border-box;">
+		<div style="background-color: #f5f5f5" ng-controller="SidebarController">
+			<tabset vertical="true" type="pills">
+				<tab ng-repeat="item in tabs" ng-click="changeView(item)" heading="{{item.text}}">
+			</tabset>
+		</div>
+		<div>
+			<div id="viewBarContainer">
+				<div id="viewContainer">
+					<div ng-view=""></div> <!-- maybe need padding 2px for loader in future -->
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+<toaster-container toaster-options="{'position-class': 'toast-top-right'}"></toaster-container>

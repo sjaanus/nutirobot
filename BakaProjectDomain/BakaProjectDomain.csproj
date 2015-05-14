@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DF5BCA9F-AF2B-4D14-8BE6-FFCCBFFC4A34}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BakaProjectDomain</RootNamespace>
+    <AssemblyName>BakaProjectDomain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Domain\Enums\AuthenticationType.cs" />
+    <Compile Include="Domain\Enums\Privacy.cs" />
+    <Compile Include="Domain\Share.cs" />
+    <Compile Include="Domain\Exercise.cs" />
+    <Compile Include="Domain\Resource.cs" />
+    <Compile Include="Domain\Tag.cs" />
+    <Compile Include="Domain\Token.cs" />
+    <Compile Include="Domain\User.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Migrations\201503281902115_First.cs" />
+    <Compile Include="Migrations\201503281902115_First.Designer.cs">
+      <DependentUpon>201503281902115_First.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504041406484_User.cs" />
+    <Compile Include="Migrations\201504041406484_User.Designer.cs">
+      <DependentUpon>201504041406484_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504041418379_User1.cs" />
+    <Compile Include="Migrations\201504041418379_User1.Designer.cs">
+      <DependentUpon>201504041418379_User1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504081031328_ExercisePrivacy.cs" />
+    <Compile Include="Migrations\201504081031328_ExercisePrivacy.Designer.cs">
+      <DependentUpon>201504081031328_ExercisePrivacy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504081146554_UserActivated.cs" />
+    <Compile Include="Migrations\201504081146554_UserActivated.Designer.cs">
+      <DependentUpon>201504081146554_UserActivated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504090759483_UserActivated1.cs" />
+    <Compile Include="Migrations\201504090759483_UserActivated1.Designer.cs">
+      <DependentUpon>201504090759483_UserActivated1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504090836237_UserName.cs" />
+    <Compile Include="Migrations\201504090836237_UserName.Designer.cs">
+      <DependentUpon>201504090836237_UserName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505041738399_Auth.cs" />
+    <Compile Include="Migrations\201505041738399_Auth.Designer.cs">
+      <DependentUpon>201505041738399_Auth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505051021356_Tags.cs" />
+    <Compile Include="Migrations\201505051021356_Tags.Designer.cs">
+      <DependentUpon>201505051021356_Tags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505052052167_SharedExercise.cs" />
+    <Compile Include="Migrations\201505052052167_SharedExercise.Designer.cs">
+      <DependentUpon>201505052052167_SharedExercise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505060939346_Share.cs" />
+    <Compile Include="Migrations\201505060939346_Share.Designer.cs">
+      <DependentUpon>201505060939346_Share.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505060959395_Share1.cs" />
+    <Compile Include="Migrations\201505060959395_Share1.Designer.cs">
+      <DependentUpon>201505060959395_Share1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505080855050_Resource.cs" />
+    <Compile Include="Migrations\201505080855050_Resource.Designer.cs">
+      <DependentUpon>201505080855050_Resource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505100823068_ExerciseTagCascade.cs" />
+    <Compile Include="Migrations\201505100823068_ExerciseTagCascade.Designer.cs">
+      <DependentUpon>201505100823068_ExerciseTagCascade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505101421204_User2.cs" />
+    <Compile Include="Migrations\201505101421204_User2.Designer.cs">
+      <DependentUpon>201505101421204_User2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\RepositoryContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201503281902115_First.resx">
+      <DependentUpon>201503281902115_First.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504041406484_User.resx">
+      <DependentUpon>201504041406484_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504041418379_User1.resx">
+      <DependentUpon>201504041418379_User1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504081031328_ExercisePrivacy.resx">
+      <DependentUpon>201504081031328_ExercisePrivacy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504081146554_UserActivated.resx">
+      <DependentUpon>201504081146554_UserActivated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504090759483_UserActivated1.resx">
+      <DependentUpon>201504090759483_UserActivated1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504090836237_UserName.resx">
+      <DependentUpon>201504090836237_UserName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505041738399_Auth.resx">
+      <DependentUpon>201505041738399_Auth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505051021356_Tags.resx">
+      <DependentUpon>201505051021356_Tags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505052052167_SharedExercise.resx">
+      <DependentUpon>201505052052167_SharedExercise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505060939346_Share.resx">
+      <DependentUpon>201505060939346_Share.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505060959395_Share1.resx">
+      <DependentUpon>201505060959395_Share1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505080855050_Resource.resx">
+      <DependentUpon>201505080855050_Resource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505100823068_ExerciseTagCascade.resx">
+      <DependentUpon>201505100823068_ExerciseTagCascade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505101421204_User2.resx">
+      <DependentUpon>201505101421204_User2.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

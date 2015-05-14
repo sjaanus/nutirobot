@@ -1,0 +1,515 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{63BE73BB-37C6-43D6-B808-3C07B38AB0C4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BakaProject</RootNamespace>
+    <AssemblyName>BakaProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Facebook.6.8.0\lib\net45\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis">
+      <HintPath>..\packages\Google.Apis.1.9.1\lib\net40\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth">
+      <HintPath>..\packages\Google.Apis.Auth.1.9.1\lib\net40\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.Mvc4">
+      <HintPath>..\packages\Google.Apis.Auth.Mvc.1.9.1\lib\net40\Google.Apis.Auth.Mvc4.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices">
+      <HintPath>..\packages\Google.Apis.Auth.1.9.1\lib\net40\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core">
+      <HintPath>..\packages\Google.Apis.Core.1.9.1\lib\portable-net40+sl50+win+wpa81+wp80\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices">
+      <HintPath>..\packages\Google.Apis.1.9.1\lib\net40\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Plus.v1">
+      <HintPath>..\packages\Google.Apis.Plus.v1.1.9.0.2190\lib\portable-net40+sl50+win+wpa81+wp80\Google.Apis.Plus.v1.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ninject.Web.Common.3.2.3.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License">
+      <HintPath>..\packages\FreeSpire.PDF.3.2\lib\net40\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf">
+      <HintPath>..\packages\FreeSpire.PDF.3.2\lib\net40\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebActivatorEx.2.0.6\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Zlib.Portable">
+      <HintPath>..\packages\Zlib.Portable.1.10.0\lib\portable-net4+sl5+wp8+win8+wpa81+MonoTouch+MonoAndroid\Zlib.Portable.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Constants\Constants.cs" />
+    <Compile Include="Constants\ErrorConstants.cs" />
+    <Compile Include="Controllers\Api\ResourceUploadController.cs" />
+    <Compile Include="Controllers\PolicyController.cs" />
+    <Compile Include="Controllers\ResourceController.cs" />
+    <Compile Include="Controllers\Api\AuthController.cs" />
+    <Compile Include="Controllers\ShareController.cs" />
+    <Compile Include="Controllers\Api\UserController.cs" />
+    <Compile Include="Controllers\BrowseController.cs" />
+    <Compile Include="Controllers\Api\ExerciseController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Api\SidebarController.cs" />
+    <Compile Include="Controllers\ActivateController.cs" />
+    <Compile Include="Controllers\UploadController.cs" />
+    <Compile Include="Exceptions\InformativeException.cs" />
+    <Compile Include="Filters\AuthenticationFilter.cs" />
+    <Compile Include="Filters\HandleExceptionAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="IoC\NinjectWebCommon.cs" />
+    <Compile Include="Managers\AuthManager.cs" />
+    <Compile Include="Managers\Helper.cs" />
+    <Compile Include="Managers\IHelper.cs" />
+    <Compile Include="Models\ShareModel.cs" />
+    <Compile Include="Models\TagModel.cs" />
+    <Compile Include="Models\AuthModel.cs" />
+    <Compile Include="Models\ExerciseModel.cs" />
+    <Compile Include="Models\FacebookProfile.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Principal\MyPrincipal.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Application\application.css" />
+    <Content Include="Content\Application\header.png" />
+    <Content Include="Content\Application\logo.png" />
+    <Content Include="Content\Bootstrap\editor.png" />
+    <Content Include="Content\Bootstrap\imagebrowser.png" />
+    <Content Include="Content\Bootstrap\indeterminate.gif" />
+    <Content Include="Content\Bootstrap\loading-image.gif" />
+    <Content Include="Content\Bootstrap\loading.gif" />
+    <Content Include="Content\Bootstrap\loading_2x.gif" />
+    <Content Include="Content\Bootstrap\slider-h.gif" />
+    <Content Include="Content\Bootstrap\slider-v.gif" />
+    <Content Include="Content\Bootstrap\sprite.png" />
+    <Content Include="Content\Bootstrap\sprite_2x.png" />
+    <Content Include="Content\Bootstrap\sprite_kpi.png" />
+    <Content Include="Content\Bootstrap\sprite_kpi_2x.png" />
+    <Content Include="Content\css\font-awesome.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\header.png" />
+    <Content Include="Content\Libraries\bootstrap-social\bootstrap-social.css" />
+    <Content Include="Content\Libraries\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Content\Libraries\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Content\Libraries\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\Libraries\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\Libraries\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Libraries\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\Libraries\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\Libraries\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Libraries\kendo\Bootstrap\editor.png" />
+    <Content Include="Content\Libraries\kendo\Bootstrap\imagebrowser.png" />
+    <Content Include="Content\Libraries\kendo\Bootstrap\indeterminate.gif" />
+    <Content Include="Content\Libraries\kendo\Bootstrap\loading-image.gif" />
+    <Content Include="Content\Libraries\kendo\Bootstrap\loading.gif" />
+    <Content Include="Content\Libraries\kendo\Bootstrap\loading_2x.gif" />
+    <Content Include="Content\Libraries\kendo\Bootstrap\slider-h.gif" />
+    <Content Include="Content\Libraries\kendo\Bootstrap\slider-v.gif" />
+    <Content Include="Content\Libraries\kendo\Bootstrap\sprite.png" />
+    <Content Include="Content\Libraries\kendo\Bootstrap\sprite_2x.png" />
+    <Content Include="Content\Libraries\kendo\Bootstrap\sprite_kpi.png" />
+    <Content Include="Content\Libraries\kendo\Bootstrap\sprite_kpi_2x.png" />
+    <Content Include="Content\Libraries\kendo\fonts\DejaVu\LICENSE.txt" />
+    <Content Include="Content\Libraries\kendo\images\back.png" />
+    <Content Include="Content\Libraries\kendo\images\kendoui.svg" />
+    <Content Include="Content\Libraries\kendo\images\wp8_icons.png" />
+    <Content Include="Content\Libraries\kendo\images\wp8_inverseicons.png" />
+    <Content Include="Content\Libraries\kendo\kendo.bootstrap.css" />
+    <Content Include="Content\Libraries\kendo\kendo.common.css" />
+    <Content Include="Content\Libraries\kendo\textures\brushed-metal.png" />
+    <Content Include="Content\Libraries\kendo\textures\dots1.png" />
+    <Content Include="Content\Libraries\kendo\textures\dots10.png" />
+    <Content Include="Content\Libraries\kendo\textures\dots11.png" />
+    <Content Include="Content\Libraries\kendo\textures\dots12.png" />
+    <Content Include="Content\Libraries\kendo\textures\dots13.png" />
+    <Content Include="Content\Libraries\kendo\textures\dots2.png" />
+    <Content Include="Content\Libraries\kendo\textures\dots3.png" />
+    <Content Include="Content\Libraries\kendo\textures\dots4.png" />
+    <Content Include="Content\Libraries\kendo\textures\dots5.png" />
+    <Content Include="Content\Libraries\kendo\textures\dots6.png" />
+    <Content Include="Content\Libraries\kendo\textures\dots7.png" />
+    <Content Include="Content\Libraries\kendo\textures\dots8.png" />
+    <Content Include="Content\Libraries\kendo\textures\dots9.png" />
+    <Content Include="Content\Libraries\kendo\textures\glass-lighter.png" />
+    <Content Include="Content\Libraries\kendo\textures\glass.png" />
+    <Content Include="Content\Libraries\kendo\textures\highlight.png" />
+    <Content Include="Content\Libraries\kendo\textures\hsv-gradient.png" />
+    <Content Include="Content\Libraries\kendo\textures\hue.png" />
+    <Content Include="Content\Libraries\kendo\textures\leather1.png" />
+    <Content Include="Content\Libraries\kendo\textures\leather2.png" />
+    <Content Include="Content\Libraries\kendo\textures\noise.png" />
+    <Content Include="Content\Libraries\kendo\textures\stripe1.png" />
+    <Content Include="Content\Libraries\kendo\textures\stripe2.png" />
+    <Content Include="Content\Libraries\kendo\textures\stripe3.png" />
+    <Content Include="Content\Libraries\kendo\textures\stripe4.png" />
+    <Content Include="Content\Libraries\kendo\textures\stripe5.png" />
+    <Content Include="Content\Libraries\kendo\textures\stripe6.png" />
+    <Content Include="Content\Libraries\kendo\textures\transparency.png" />
+    <Content Include="Content\Libraries\kendo\textures\transtexture.png" />
+    <Content Include="Content\Libraries\ng-progress\ngProgress.css" />
+    <Content Include="Content\Libraries\ng-tags-input\ng-tags-input.bootstrap.css" />
+    <Content Include="Content\Libraries\ng-tags-input\ng-tags-input.css" />
+    <Content Include="Content\Libraries\text-angular\textAngular.css" />
+    <Content Include="Content\Libraries\toaster\toaster.css" />
+    <Content Include="Content\Libraries\ui-grid\ui-grid.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\Application\Controllers\ResourceController.js" />
+    <Content Include="Scripts\Application\Controllers\HeaderController.js" />
+    <Content Include="Scripts\Application\Controllers\HomeController.js" />
+    <Content Include="Scripts\Application\Controllers\SidebarController.js" />
+    <Content Include="Scripts\Application\Controllers\BrowseController.js" />
+    <Content Include="Scripts\Application\Controllers\ActivateController.js" />
+    <Content Include="Scripts\Application\Controllers\UploadController.js" />
+    <Content Include="Scripts\Application\Modules\HomeModule.js" />
+    <Content Include="Scripts\Application\Services\ResourcesService.js" />
+    <Content Include="Scripts\Application\Services\LoadingService.js" />
+    <Content Include="Scripts\Application\Services\NavigatorService.js" />
+    <Content Include="Scripts\Application\Services\UserService.js" />
+    <Content Include="Scripts\Application\Services\ExerciseService.js" />
+    <Content Include="Scripts\Libraries\angular-file-upload\angular-file-upload.js" />
+    <Content Include="Scripts\Libraries\angularjs\angular-animate.js" />
+    <Content Include="Scripts\Libraries\angularjs\angular-resource.js" />
+    <Content Include="Scripts\Libraries\angularjs\angular-route.js" />
+    <Content Include="Scripts\Libraries\angularjs\angular.js" />
+    <Content Include="Scripts\Libraries\bootstrap\ui-bootstrap-custom-tpls-0.12.1.js" />
+    <Content Include="Scripts\Libraries\jquery\jquery-2.1.3.js" />
+    <Content Include="Scripts\Libraries\jspdf.js" />
+    <Content Include="Scripts\Libraries\kendo\kendo.ui.core.js" />
+    <Content Include="Scripts\Libraries\ng-progress\ngProgress.js" />
+    <Content Include="Scripts\Libraries\ng-storage\ngStorage.js" />
+    <Content Include="Scripts\Libraries\ng-tags-input\ng-tags-input.js" />
+    <Content Include="Scripts\Libraries\satellizer\satellizer.js" />
+    <Content Include="Scripts\Libraries\text-angular\textAngular-rangy.js" />
+    <Content Include="Scripts\Libraries\text-angular\textAngular-sanitize.js" />
+    <Content Include="Scripts\Libraries\text-angular\textAngular.js" />
+    <Content Include="Scripts\Libraries\toaster\toaster.js" />
+    <Content Include="Scripts\Libraries\ui-grid\ui-grid.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\Uploads\" />
+    <Folder Include="Scripts\Application\Directives\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Libraries\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Content\Libraries\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\Libraries\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Libraries\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Libraries\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Libraries\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Upload\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Browse\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Template.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Browse\Home.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Upload\Home.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Libraries\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Libraries\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Libraries\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Libraries\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Libraries\font-awesome\fonts\FontAwesome.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Log4net.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BakaProjectDomain\BakaProjectDomain.csproj">
+      <Project>{df5bca9f-af2b-4d14-8be6-ffccbffc4a34}</Project>
+      <Name>BakaProjectDomain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Activate\Home.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Activate\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Libraries\kendo\fonts\DejaVu\DejaVuSans-Bold.ttf" />
+    <Content Include="Content\Libraries\kendo\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
+    <Content Include="Content\Libraries\kendo\fonts\DejaVu\DejaVuSans-Oblique.ttf" />
+    <Content Include="Content\Libraries\kendo\fonts\DejaVu\DejaVuSans.ttf" />
+    <Content Include="Content\Libraries\kendo\fonts\DejaVu\DejaVuSansMono-Bold.ttf" />
+    <Content Include="Content\Libraries\kendo\fonts\DejaVu\DejaVuSansMono-BoldOblique.ttf" />
+    <Content Include="Content\Libraries\kendo\fonts\DejaVu\DejaVuSansMono-Oblique.ttf" />
+    <Content Include="Content\Libraries\kendo\fonts\DejaVu\DejaVuSansMono.ttf" />
+    <Content Include="Content\Libraries\kendo\fonts\DejaVu\DejaVuSerif-Bold.ttf" />
+    <Content Include="Content\Libraries\kendo\fonts\DejaVu\DejaVuSerif-BoldItalic.ttf" />
+    <Content Include="Content\Libraries\kendo\fonts\DejaVu\DejaVuSerif-Italic.ttf" />
+    <Content Include="Content\Libraries\kendo\fonts\DejaVu\DejaVuSerif.ttf" />
+    <Content Include="Content\Libraries\kendo\images\kendoui.ttf" />
+    <Content Include="Content\Libraries\kendo\images\kendoui.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Libraries\ui-grid\ui-grid.ttf" />
+    <Content Include="Content\Libraries\ui-grid\ui-grid.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Share\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Resource\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Resource\Home.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\ui-grid.ttf" />
+    <Content Include="Content\ui-grid.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <None Include="Properties\PublishProfiles\Amazon.pubxml" />
+    <Content Include="Views\Policy\Index.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53906</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53906/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

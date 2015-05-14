@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+	<link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+
+	<title>Nutirobot</title>
+	@Styles.Render("~/Content/libs")
+	@Styles.Render("~/Content/app")
+
+</head>
+<body ng-app="HomeModule" class="container-fluid">
+	@RenderBody()
+	@Scripts.Render("~/bundles/library")
+	@Scripts.Render("~/bundles/application")
+	@RenderSection("scripts", required: false)
+</body>
+</html>

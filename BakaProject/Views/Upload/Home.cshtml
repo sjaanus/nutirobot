@@ -1,0 +1,73 @@
+﻿@{
+	Layout = null;
+}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<h3>Ülesande pealkiri</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<input type="text" class="k-textbox" ng-model="exercise.title">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<h3>Ülesande püstitus</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div text-angular ng-model="exercise.question"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<h3>Vihje</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div text-angular ng-model="exercise.tip"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<h3>Lahendus</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div text-angular ng-model="exercise.answer"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<h3>Sildid</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<tags-input ng-model="exercise.tags" placeholder="Lisa silt ja vajuta ENTER" class="bootstrap"></tags-input>
+		</div>
+	</div>
+	<div ng-show="user.Teacher">
+		<div class="row">
+			<div class="col-md-12">
+				<h3>Privaatsus</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<input type="radio" ng-model="exercise.privacy" value="1">Avalik
+				<input type="radio" ng-model="exercise.privacy" value="2">Avalik ainult õpetajatele
+			</div>
+		</div>
+	</div>
+	<div class="row" style="margin-top:10px;">
+		<div class="col-md-12">
+			<button kendo-button class="k-primary" ng-click="upload()">Laadi üles</button>
+		</div>
+	</div>
+</div>

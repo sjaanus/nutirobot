@@ -1,0 +1,72 @@
+﻿<div>
+	@if (ViewBag.Title != null) {
+		<div>
+			<div class="row">
+				<div class="col-md-6">
+					<h3>Ülesande pealkiri</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					@Html.Raw(ViewBag.Title)
+				</div>
+			</div>
+		</div>
+	}
+	@if (ViewBag.Question != null) {
+		<div>
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Ülesande püstitus</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					@Html.Raw(ViewBag.Question)
+				</div>
+			</div>
+		</div>
+	}
+	@if (ViewBag.Tip != null) {
+		<div>
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Vihje</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					@Html.Raw(ViewBag.Tip)
+				</div>
+			</div>
+		</div>
+	}
+	@if (ViewBag.Answer != null) {
+		<div>
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Lahendus</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					@Html.Raw(ViewBag.Answer)
+				</div>
+			</div>
+		</div>
+	}
+	@if (ViewBag.Tags != null) {
+		<div>
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Sildid</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					@Html.Raw(ViewBag.Tags)
+				</div>
+			</div>
+		</div>
+	}
+</div>
